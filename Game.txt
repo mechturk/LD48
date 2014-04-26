@@ -1,0 +1,170 @@
+
+flickscreen 16x10
+
+(set in city)
+(hidden sides to city)
+ (alleyways)
+ (service lifts)
+ (utility routes)
+
+(start protagist in "normal" world)
+
+(paradigm shift)
+
+(        black
+        white
+        grey
+        darkgrey
+        lightgrey
+        gray
+        darkgray
+        lightgray
+        red
+        darkred
+        lightred
+        brown
+        darkbrown
+        lightbrown
+        orange
+        yellow
+        green
+        darkgreen
+        lightgreen
+        blue
+        lightblue
+        darkblue
+        purple
+        pink
+        transparent)
+
+
+========
+OBJECTS
+========
+
+Background
+DarkBlue DarkGreen
+01000
+11111
+00010
+00010
+11111
+
+Roof
+DarkBrown Brown LightBrown
+00000
+01110
+01210
+01110
+00000
+
+Tree
+Green LightGreen Grey DarkGrey
+30012
+00011
+00011
+00001
+30003
+
+Pavement
+Grey
+
+Road
+Black
+
+Bin
+Blue
+
+Alley
+Transparent
+.....
+.....
+.....
+.....
+.....
+
+PlayerU
+DarkGrey Orange Green LightGreen Grey LightBrown
+.....
+.1.5.
+.024.
+..2..
+.....
+
+
+PlayerD
+DarkGrey Orange Green LightGreen Grey
+.....
+..3..
+.024.
+.1.1.
+.....
+
+PlayerL
+DarkGrey Orange Green LightGreen Grey
+.....
+.14..
+..23.
+.10..
+.....
+
+PlayerR
+DarkGrey Orange Green LightGreen Grey LightBrown
+.....
+..45.
+.23..
+..01.
+.....
+
+
+=======
+LEGEND
+=======
+Player = PlayerU or PlayerD or PlayerL or PlayerR
+
+. = Background
+@ = PlayerR
+# = Roof
+O = Tree
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+Background
+Alley, Pavement, Road
+Player, Roof, Tree, Bin
+
+======
+RULES
+======
+
+[Up Player] -> [Up PlayerU]
+[Down Player] -> [Down PlayerD]
+[Left Player] -> [Left PlayerL]
+[Right Player] -> [Right PlayerR]
+
+
+[> Player| Tree] -> [> Player| > Tree]
+
+
+==============
+WINCONDITIONS
+==============
+
+=======
+LEVELS
+=======
+
+################
+#..............#
+#..............#
+#......@....o..#
+#..............#
+#...........o..#
+#..............#
+#..............#
+################
